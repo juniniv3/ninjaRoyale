@@ -58,11 +58,13 @@ class LoginController extends Controller
                 
                 
                 $nuevoLogin->save();    
-                return "recurso creado";
+                return response('Usuario Logeado', 201)
+                ->header('Content-Type', 'text/plain');
+
             }
                     
         }else{
-            return "madremiaguilli2";
+            return "Error al intentar iniciar sesión";
         }
 
         /*
